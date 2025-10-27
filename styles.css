@@ -96,7 +96,7 @@ body {
 
 .page-section {
     display: none;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 .page-section.active {
@@ -111,6 +111,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: -20px;
 }
 
 .hero-content h1 {
@@ -160,6 +161,28 @@ body {
     text-align: center;
     font-size: 8rem;
     color: #1F7A8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-main {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(31, 122, 140, 0.3), 
+                0 10px 30px rgba(31, 122, 140, 0.2),
+                0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.hero-image-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(31, 122, 140, 0.4), 
+                0 15px 35px rgba(31, 122, 140, 0.3),
+                0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Section Content */
@@ -650,6 +673,46 @@ body {
 .option input[type="radio"] {
     margin-right: 15px;
     transform: scale(1.2);
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.option input[type="radio"]:checked {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.option.selected input[type="radio"] {
+    border-color: white;
+    background: white;
+}
+
+.option.selected input[type="radio"]:checked {
+    background: white;
+    border-color: white;
+}
+
+.option.selected input[type="radio"]:checked::after {
+    background: #667eea;
 }
 
 .option label {
@@ -1061,6 +1124,13 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .hero-image-main {
+        max-width: 100%;
+        box-shadow: 0 15px 40px rgba(31, 122, 140, 0.25), 
+                    0 8px 20px rgba(31, 122, 140, 0.15),
+                    0 3px 10px rgba(0, 0, 0, 0.1);
     }
     
     .about-grid,
